@@ -22,7 +22,7 @@ export const mockIssues = [
     dateReported: "2025-01-12",
     reportedBy: "user456",
     adminAssigned: "admin1",
-    image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=400&h=300&fit=crop"
+    image: "https://via.placeholder.com/400x300/16a34a/ffffff?text=Street+Light"
   },
   {
     id: 3,
