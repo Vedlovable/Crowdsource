@@ -367,7 +367,6 @@ const AdminPanel = () => {
         </Card>
       </div>
     </div>
-    </GeometricBackground>
   );
 };
 
