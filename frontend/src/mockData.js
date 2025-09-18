@@ -107,8 +107,30 @@ export let currentUser = null;
 
 export const setCurrentUser = (user) => {
   currentUser = user;
+  // Store in localStorage for persistence during navigation
+  if (user) {
+    localStorage.setItem('currentUser', JSON.stringify(user));
+  } else {
+    localStorage.removeItem('currentUser');
+  }
 };
 
 export const getCurrentUser = () => {
-  return currentUser;
+  // First check memory
+  if (currentUser) {
+    return currentUser;
+  }
+  
+  // Then check localStorage
+  try {
+    const stored = localStorage.getItem('currentUser');
+    if (stored) {
+      currentUser = JSON.parse(stored);
+      return currentUser;
+    }
+  } catch (e) {
+    console.error('Error parsing stored user:', e);
+  }
+  
+  return null;
 };
