@@ -266,7 +266,7 @@ const AdminPanel = () => {
                   </SelectContent>
                 </Select>
 
-                <Select value={filters.status} onValueChange={(value) => handleFilterChange('status', value)}>
+                <Select value={filters.status || ""} onValueChange={(value) => handleFilterChange('status', value)}>
                   <SelectTrigger className="border-green-200 focus:border-green-500">
                     <SelectValue placeholder="All Statuses" />
                   </SelectTrigger>
