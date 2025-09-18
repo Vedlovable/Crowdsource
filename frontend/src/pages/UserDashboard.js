@@ -6,7 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs'
 import { Badge } from '../components/ui/badge';
 import GeometricBackground from '../components/GeometricBackground';
 import IssueCard from '../components/IssueCard';
-import { getCurrentUser, mockIssues } from '../mockData';
+import { getCurrentUser, mockIssues, setCurrentUser } from '../mockData';
 import { Plus, MapPin, BarChart3, Clock, CheckCircle, AlertCircle, LogOut } from 'lucide-react';
 
 const UserDashboard = () => {
