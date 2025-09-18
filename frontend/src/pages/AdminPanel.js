@@ -178,180 +178,195 @@ const AdminPanel = () => {
         </div>
       </header>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {/* Stats Overview */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="flex items-center">
-                  <div className="p-3 bg-blue-100 rounded-lg">
-                    <BarChart3 className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div className="ml-4">
-                    <p className="text-sm text-gray-600">Total Issues</p>
-                    <p className="text-2xl font-bold text-gray-900">{stats.total}</p>
-                  </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Professional Stats Overview */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+          <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-blue-500 to-blue-600 text-white">
+            <CardContent className="p-6">
+              <div className="flex items-center">
+                <div className="p-3 bg-white/20 rounded-lg backdrop-blur-sm">
+                  <BarChart3 className="w-6 h-6 text-white" />
                 </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="flex items-center">
-                  <div className="p-3 bg-yellow-100 rounded-lg">
-                    <Clock className="w-6 h-6 text-yellow-600" />
-                  </div>
-                  <div className="ml-4">
-                    <p className="text-sm text-gray-600">Pending</p>
-                    <p className="text-2xl font-bold text-gray-900">{stats.pending}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="flex items-center">
-                  <div className="p-3 bg-orange-100 rounded-lg">
-                    <AlertTriangle className="w-6 h-6 text-orange-600" />
-                  </div>
-                  <div className="ml-4">
-                    <p className="text-sm text-gray-600">In Progress</p>
-                    <p className="text-2xl font-bold text-gray-900">{stats.inProgress}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="hover:shadow-lg transition-shadow">
-              <CardContent className="p-6">
-                <div className="flex items-center">
-                  <div className="p-3 bg-green-100 rounded-lg">
-                    <CheckCircle className="w-6 h-6 text-green-600" />
-                  </div>
-                  <div className="ml-4">
-                    <p className="text-sm text-gray-600">Resolved</p>
-                    <p className="text-2xl font-bold text-gray-900">{stats.resolved}</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Filters */}
-          <Card className="mb-6">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Filter className="w-5 h-5 text-green-600" />
-                Filters & Search
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div>
-                  <div className="relative">
-                    <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                    <Input
-                      placeholder="Search issues..."
-                      value={filters.search}
-                      onChange={(e) => handleFilterChange('search', e.target.value)}
-                      className="pl-10 border-green-200 focus:border-green-500"
-                    />
-                  </div>
-                </div>
-                
-                <Select value={filters.category || ""} onValueChange={(value) => handleFilterChange('category', value)}>
-                  <SelectTrigger className="border-green-200 focus:border-green-500">
-                    <SelectValue placeholder="All Categories" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">All Categories</SelectItem>
-                    {issueCategories.map((category) => (
-                      <SelectItem key={category} value={category}>
-                        {category}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-
-                <Select value={filters.status || ""} onValueChange={(value) => handleFilterChange('status', value)}>
-                  <SelectTrigger className="border-green-200 focus:border-green-500">
-                    <SelectValue placeholder="All Statuses" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="all">All Statuses</SelectItem>
-                    <SelectItem value="Pending">Pending</SelectItem>
-                    <SelectItem value="In Progress">In Progress</SelectItem>
-                    <SelectItem value="Resolved">Resolved</SelectItem>
-                  </SelectContent>
-                </Select>
-
-                <div className="relative">
-                  <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-                  <Input
-                    placeholder="Location..."
-                    value={filters.location}
-                    onChange={(e) => handleFilterChange('location', e.target.value)}
-                    className="pl-10 border-green-200 focus:border-green-500"
-                  />
+                <div className="ml-4">
+                  <p className="text-sm text-blue-100">Total Issues</p>
+                  <p className="text-3xl font-bold text-white">{stats.total}</p>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          {/* Issues List */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Users className="w-5 h-5 text-green-600" />
-                Issue Management
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Tabs value={activeTab} onValueChange={setActiveTab}>
-                <TabsList className="grid w-full grid-cols-4 bg-green-50">
-                  <TabsTrigger value="all" className="data-[state=active]:bg-green-600 data-[state=active]:text-white">
+          <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-amber-500 to-orange-600 text-white">
+            <CardContent className="p-6">
+              <div className="flex items-center">
+                <div className="p-3 bg-white/20 rounded-lg backdrop-blur-sm">
+                  <Clock className="w-6 h-6 text-white" />
+                </div>
+                <div className="ml-4">
+                  <p className="text-sm text-amber-100">Pending</p>
+                  <p className="text-3xl font-bold text-white">{stats.pending}</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-purple-500 to-purple-600 text-white">
+            <CardContent className="p-6">
+              <div className="flex items-center">
+                <div className="p-3 bg-white/20 rounded-lg backdrop-blur-sm">
+                  <AlertTriangle className="w-6 h-6 text-white" />
+                </div>
+                <div className="ml-4">
+                  <p className="text-sm text-purple-100">In Progress</p>
+                  <p className="text-3xl font-bold text-white">{stats.inProgress}</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
+          <Card className="hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-emerald-500 to-green-600 text-white">
+            <CardContent className="p-6">
+              <div className="flex items-center">
+                <div className="p-3 bg-white/20 rounded-lg backdrop-blur-sm">
+                  <CheckCircle className="w-6 h-6 text-white" />
+                </div>
+                <div className="ml-4">
+                  <p className="text-sm text-emerald-100">Resolved</p>
+                  <p className="text-3xl font-bold text-white">{stats.resolved}</p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+
+        {/* Advanced Filters Panel */}
+        <Card className="mb-6 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
+          <CardHeader className="bg-gradient-to-r from-slate-700 to-slate-800 text-white rounded-t-lg">
+            <CardTitle className="flex items-center gap-2 text-lg">
+              <Filter className="w-5 h-5 text-blue-400" />
+              Advanced Filtering & Search Console
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="p-6 bg-slate-50">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <div>
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-4 h-4" />
+                  <Input
+                    placeholder="Search issues..."
+                    value={filters.search}
+                    onChange={(e) => handleFilterChange('search', e.target.value)}
+                    className="pl-10 border-slate-300 focus:border-blue-500 focus:ring-blue-500 bg-white"
+                  />
+                </div>
+              </div>
+              
+              <Select value={filters.category || ""} onValueChange={(value) => handleFilterChange('category', value)}>
+                <SelectTrigger className="border-slate-300 focus:border-blue-500 bg-white">
+                  <SelectValue placeholder="All Categories" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Categories</SelectItem>
+                  {issueCategories.map((category) => (
+                    <SelectItem key={category} value={category}>
+                      {category}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+
+              <Select value={filters.status || ""} onValueChange={(value) => handleFilterChange('status', value)}>
+                <SelectTrigger className="border-slate-300 focus:border-blue-500 bg-white">
+                  <SelectValue placeholder="All Statuses" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Statuses</SelectItem>
+                  <SelectItem value="Pending">Pending</SelectItem>
+                  <SelectItem value="In Progress">In Progress</SelectItem>
+                  <SelectItem value="Resolved">Resolved</SelectItem>
+                </SelectContent>
+              </Select>
+
+              <div className="relative">
+                <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-4 h-4" />
+                <Input
+                  placeholder="Location..."
+                  value={filters.location}
+                  onChange={(e) => handleFilterChange('location', e.target.value)}
+                  className="pl-10 border-slate-300 focus:border-blue-500 focus:ring-blue-500 bg-white"
+                />
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Issue Management Console */}
+        <Card className="shadow-lg border-0 bg-white/90 backdrop-blur-sm">
+          <CardHeader className="bg-gradient-to-r from-slate-700 to-slate-800 text-white rounded-t-lg">
+            <CardTitle className="flex items-center gap-2 text-lg">
+              <Users className="w-5 h-5 text-blue-400" />
+              Issue Management Console
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="p-0">
+            <Tabs value={activeTab} onValueChange={setActiveTab}>
+              <div className="bg-slate-100 px-6 pt-4">
+                <TabsList className="grid w-full grid-cols-4 bg-slate-200 p-1">
+                  <TabsTrigger 
+                    value="all" 
+                    className="data-[state=active]:bg-slate-700 data-[state=active]:text-white font-medium"
+                  >
                     All Issues ({issues.length})
                   </TabsTrigger>
-                  <TabsTrigger value="pending" className="data-[state=active]:bg-green-600 data-[state=active]:text-white">
+                  <TabsTrigger 
+                    value="pending" 
+                    className="data-[state=active]:bg-amber-600 data-[state=active]:text-white font-medium"
+                  >
                     Pending ({stats.pending})
                   </TabsTrigger>
-                  <TabsTrigger value="in-progress" className="data-[state=active]:bg-green-600 data-[state=active]:text-white">
+                  <TabsTrigger 
+                    value="in-progress" 
+                    className="data-[state=active]:bg-purple-600 data-[state=active]:text-white font-medium"
+                  >
                     In Progress ({stats.inProgress})  
                   </TabsTrigger>
-                  <TabsTrigger value="resolved" className="data-[state=active]:bg-green-600 data-[state=active]:text-white">
+                  <TabsTrigger 
+                    value="resolved" 
+                    className="data-[state=active]:bg-emerald-600 data-[state=active]:text-white font-medium"
+                  >
                     Resolved ({stats.resolved})
                   </TabsTrigger>
                 </TabsList>
+              </div>
 
-                <TabsContent value={activeTab} className="mt-6">
-                  {filteredIssues.length === 0 ? (
-                    <div className="text-center py-12">
-                      <div className="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <BarChart3 className="w-12 h-12 text-gray-400" />
-                      </div>
-                      <h3 className="text-lg font-semibold text-gray-900 mb-2">No issues found</h3>
-                      <p className="text-gray-600">Try adjusting your filters or search terms</p>
+              <TabsContent value={activeTab} className="p-6 bg-slate-50">
+                {filteredIssues.length === 0 ? (
+                  <div className="text-center py-16">
+                    <div className="w-24 h-24 bg-slate-200 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <BarChart3 className="w-12 h-12 text-slate-400" />
                     </div>
-                  ) : (
-                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                      {filteredIssues.map((issue) => (
+                    <h3 className="text-xl font-semibold text-slate-700 mb-2">No issues found</h3>
+                    <p className="text-slate-500">Try adjusting your filters or search terms</p>
+                  </div>
+                ) : (
+                  <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {filteredIssues.map((issue) => (
+                      <div key={issue.id} className="transform hover:scale-105 transition-transform duration-200">
                         <IssueCard
-                          key={issue.id}
                           issue={issue}
                           showActions={true}
                           onAssign={handleAssignIssue}
                           onResolve={handleResolveIssue}
                         />
-                      ))}
-                    </div>
-                  )}
-                </TabsContent>
-              </Tabs>
-            </CardContent>
-          </Card>
-        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </TabsContent>
+            </Tabs>
+          </CardContent>
+        </Card>
       </div>
+    </div>
     </GeometricBackground>
   );
 };
