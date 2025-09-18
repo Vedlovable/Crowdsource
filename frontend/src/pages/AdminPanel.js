@@ -85,7 +85,7 @@ const AdminPanel = () => {
   const handleFilterChange = (key, value) => {
     setFilters(prev => ({
       ...prev,
-      [key]: value
+      [key]: value === 'all' ? '' : value
     }));
   };
 
