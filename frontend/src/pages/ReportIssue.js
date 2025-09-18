@@ -192,7 +192,7 @@ const ReportIssue = () => {
                     {/* Category */}
                     <div>
                       <Label className="text-gray-700 font-medium">Category *</Label>
-                      <Select value={formData.category} onValueChange={handleCategoryChange}>
+                      <Select value={formData.category || ""} onValueChange={handleCategoryChange}>
                         <SelectTrigger className="mt-2 border-green-200 focus:border-green-500">
                           <SelectValue placeholder="Select issue category" />
                         </SelectTrigger>
