@@ -46,7 +46,7 @@ export const mockIssues = [
     dateReported: "2025-01-14",
     reportedBy: "user321",
     adminAssigned: null,
-    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=300&fit=crop"
+    image: "https://via.placeholder.com/400x300/65a30d/ffffff?text=Playground"
   },
   {
     id: 5,
