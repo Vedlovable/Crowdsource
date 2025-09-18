@@ -132,44 +132,51 @@ const AdminPanel = () => {
   const stats = getStats();
 
   return (
-    <GeometricBackground variant="dashboard">
-      <div className="min-h-screen">
-        {/* Header */}
-        <header className="bg-white/90 backdrop-blur-sm border-b border-green-200 sticky top-0 z-40">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center py-4">
-              <div>
-                <h1 className="text-2xl font-bold text-gray-900">
-                  Admin <span className="text-green-600">Dashboard</span>
-                </h1>
-                <p className="text-sm text-gray-600">Civic Issue Management System</p>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+      {/* Professional Admin Header */}
+      <header className="bg-gradient-to-r from-slate-800 to-slate-900 border-b border-slate-700 sticky top-0 z-40 shadow-lg">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center py-4">
+            <div className="flex items-center gap-4">
+              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                <Settings className="w-6 h-6 text-white" />
               </div>
-              <div className="flex items-center gap-4">
-                <div className="text-right">
-                  <p className="text-sm text-gray-600">Administrator</p>
-                  <p className="font-semibold text-gray-900">{user?.name}</p>
-                </div>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="border-green-200 text-green-700 hover:bg-green-50"
-                >
-                  <Settings className="w-4 h-4 mr-2" />
-                  Settings
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={handleLogout}
-                  className="border-green-200 text-green-700 hover:bg-green-50"
-                >
-                  <LogOut className="w-4 h-4 mr-2" />
-                  Logout
-                </Button>
+              <div>
+                <h1 className="text-2xl font-bold text-white">
+                  Administrative Control Panel
+                </h1>
+                <p className="text-sm text-slate-300">Civic Issue Management & Resolution System</p>
               </div>
             </div>
+            <div className="flex items-center gap-4">
+              <div className="text-right">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <p className="text-sm text-slate-300">System Administrator</p>
+                </div>
+                <p className="font-semibold text-white">{user?.name}</p>
+              </div>
+              <Button
+                variant="outline"
+                size="sm"
+                className="border-slate-600 text-slate-300 hover:bg-slate-700 hover:text-white bg-slate-800"
+              >
+                <Settings className="w-4 h-4 mr-2" />
+                Settings
+              </Button>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={handleLogout}
+                className="border-red-600 text-red-400 hover:bg-red-900 hover:text-red-300 bg-slate-800"
+              >
+                <LogOut className="w-4 h-4 mr-2" />
+                Logout
+              </Button>
+            </div>
           </div>
-        </header>
+        </div>
+      </header>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Stats Overview */}
