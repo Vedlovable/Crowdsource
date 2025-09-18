@@ -85,22 +85,38 @@ const IssueCard = ({ issue, showActions = false, onAssign, onResolve }) => {
 
         {showActions && issue.status !== 'Resolved' && (
           <div className="flex gap-2 pt-3 border-t border-gray-100">
-            {issue.status === 'Pending' && onAssign && (
+            {/* Assign Button - Show for Pending issues or allow reassignment */}
+            {(issue.status === 'Pending' || !issue.adminAssigned) && onAssign && (
               <button
                 onClick={() => onAssign(issue.id)}
-                className="px-4 py-2 bg-green-600 text-white text-sm rounded-md hover:bg-green-700 transition-colors flex-1"
+                className="px-4 py-2 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700 transition-colors flex-1 font-medium"
               >
-                Assign to Me
+                {issue.status === 'Pending' ? 'Assign to Me' : 'Reassign'}
               </button>
             )}
-            {issue.status === 'In Progress' && onResolve && (
+            
+            {/* Resolve Button - Show for all non-resolved issues */}
+            {onResolve && (
               <button
                 onClick={() => onResolve(issue.id)}
-                className="px-4 py-2 bg-emerald-600 text-white text-sm rounded-md hover:bg-emerald-700 transition-colors flex-1"
+                className="px-4 py-2 bg-emerald-600 text-white text-sm rounded-md hover:bg-emerald-700 transition-colors flex-1 font-medium"
+                disabled={issue.status === 'Pending'}
               >
-                Mark Resolved
+                {issue.status === 'Pending' ? 'Assign First' : 'Mark Resolved'}
               </button>
             )}
+          </div>
+        )}
+        
+        {/* Admin Info for Resolved Issues */}
+        {showActions && issue.status === 'Resolved' && (
+          <div className="pt-3 border-t border-gray-100">
+            <div className="flex items-center justify-between">
+              <span className="text-sm text-green-600 font-medium">✓ Issue Resolved</span>
+              {issue.adminAssigned && (
+                <span className="text-xs text-gray-500">by {issue.adminAssigned}</span>
+              )}
+            </div>
           </div>
         )}
       </CardContent>
