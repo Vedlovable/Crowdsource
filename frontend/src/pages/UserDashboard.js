@@ -27,6 +27,7 @@ const UserDashboard = () => {
   }, [user]);
 
   const handleLogout = () => {
+    setCurrentUser(null);
     navigate('/');
   };
 
