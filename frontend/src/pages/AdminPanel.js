@@ -7,6 +7,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '.
 import { Badge } from '../components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import IssueCard from '../components/IssueCard';
+import AdminIssueCard from '../components/AdminIssueCard';
 import { getCurrentUser, mockIssues, issueCategories, setCurrentUser } from '../mockData';
 import { 
   Search, 
