@@ -34,7 +34,7 @@ export const mockIssues = [
     dateReported: "2025-01-10",
     reportedBy: "user789",
     adminAssigned: "admin2",
-    image: "https://images.unsplash.com/photo-1586973024133-1b3277b46d3c?w=400&h=300&fit=crop"
+    image: "https://via.placeholder.com/400x300/15803d/ffffff?text=Garbage+Bins"
   },
   {
     id: 4,
