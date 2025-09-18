@@ -10,7 +10,7 @@ export const mockIssues = [
     dateReported: "2025-01-15",
     reportedBy: "user123",
     adminAssigned: null,
-    image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop"
+    image: "https://via.placeholder.com/400x300/22c55e/ffffff?text=Pothole"
   },
   {
     id: 2,
