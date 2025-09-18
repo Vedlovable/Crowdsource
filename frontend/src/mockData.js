@@ -58,7 +58,7 @@ export const mockIssues = [
     dateReported: "2025-01-13",
     reportedBy: "user654",
     adminAssigned: "admin1",
-    image: "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?w=400&h=300&fit=crop"
+    image: "https://via.placeholder.com/400x300/0ea5e9/ffffff?text=Water+Leak"
   }
 ];
 
