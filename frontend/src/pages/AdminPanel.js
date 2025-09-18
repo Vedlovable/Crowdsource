@@ -96,8 +96,9 @@ const AdminPanel = () => {
     ));
     
     toast({
-      title: "Issue Assigned",
-      description: "Issue has been assigned to you and marked as In Progress."
+      title: "Issue Assigned Successfully",
+      description: "Issue has been assigned to you and marked as In Progress.",
+      duration: 3000
     });
   };
 
@@ -109,9 +110,15 @@ const AdminPanel = () => {
     ));
     
     toast({
-      title: "Issue Resolved",
-      description: "Issue has been marked as resolved."
+      title: "Issue Resolved Successfully",
+      description: "Issue has been marked as resolved and closed.",
+      duration: 3000
     });
+  };
+
+  const handleReassignIssue = (issueId) => {
+    // This could open a modal to select different admin, for now just assign to current user
+    handleAssignIssue(issueId);
   };
 
   const handleLogout = () => {
