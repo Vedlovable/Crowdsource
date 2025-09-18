@@ -358,9 +358,8 @@ const AdminPanel = () => {
                   <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                     {filteredIssues.map((issue) => (
                       <div key={issue.id} className="transform hover:scale-105 transition-transform duration-200">
-                        <IssueCard
+                        <AdminIssueCard
                           issue={issue}
-                          showActions={true}
                           onAssign={handleAssignIssue}
                           onResolve={handleResolveIssue}
                         />
