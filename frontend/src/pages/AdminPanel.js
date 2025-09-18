@@ -252,7 +252,7 @@ const AdminPanel = () => {
                   </div>
                 </div>
                 
-                <Select value={filters.category} onValueChange={(value) => handleFilterChange('category', value)}>
+                <Select value={filters.category || ""} onValueChange={(value) => handleFilterChange('category', value)}>
                   <SelectTrigger className="border-green-200 focus:border-green-500">
                     <SelectValue placeholder="All Categories" />
                   </SelectTrigger>
