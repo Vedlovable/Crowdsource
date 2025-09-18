@@ -8,7 +8,7 @@ import { Badge } from '../components/ui/badge';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs';
 import GeometricBackground from '../components/GeometricBackground';
 import IssueCard from '../components/IssueCard';
-import { getCurrentUser, mockIssues, issueCategories } from '../mockData';
+import { getCurrentUser, mockIssues, issueCategories, setCurrentUser } from '../mockData';
 import { 
   Search, 
   Filter, 
